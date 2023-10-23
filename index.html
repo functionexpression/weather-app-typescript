@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weather app</title>
+  <link rel="stylesheet" href="src/css/styles.css">
+  <script defer src="src/ts/index.ts" type="module"></script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <h1>Submit a city</h1>
+    <div class="errmsg hidden">
+      <p class="errmsg-text">error</p>
+    </div>
+    <form class="form">
+      <input type="text" name="city" placeholder="City" class="form-text">
+      <input type="submit" value="Submit" class="form-btn">
+    </form>
+  </div>
+  <div class="col-container">
+    <div>
+      <img class="svg" src="/fff.png" />
+    </div>
+    <p class="data" id="city">City</p>
+    <p class="data" id="degrees">Temperature</p>
+    <p class="data" id="weather">Weather</p>
+    <div class="grid-data grid-2 data">
+      <div class="flex">
+        <img class="icon " src="/wind-beaufort-0.svg" />
+        <p id="wind">wind</p>
+      </div>
+      <div class="flex">
+        <img class="icon" src="/humidity.svg" />
+        <p id="humidity">humidity</p>
+      </div>
+      <div class="flex">
+        <img class="icon" src="/raindrop.svg" />
+        <p id="precipitation">precipitation</p>
+      </div>
+      <div class="flex">
+        <img class="icon" src="/cloudy.svg" />
+        <p id="cloudcover">cloud cover</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer>
+    <a target="_blank" href="https://bas.dev/work/meteocons">Icons made by bas</a>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
