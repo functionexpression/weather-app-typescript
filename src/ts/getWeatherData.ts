@@ -53,12 +53,12 @@ export async function getWeatherData(url: string): Promise<void> {
 
       //convert temperature, wind speed and precipitation if the user is from the us
       degreesDOM.textContent = imperial
-        ? `${convertToFahrenheit(degrees)} °F`
-        : `${degrees} ${degreesFormat}`;
+        ? `${Math.round(convertToFahrenheit(degrees))} °F`
+        : `${Math.round(degrees)} ${degreesFormat}`;
 
       windDOM.textContent = imperial
-        ? `${convertToMPH(windspeed)} mph`
-        : `${windspeed} ${windspeedFormat}`;
+        ? `${Math.round(convertToMPH(windspeed))} mph`
+        : `${Math.round(windspeed)} ${windspeedFormat}`;
 
       humidityDOM.textContent = `${humidity}${humidityFormat}`;
 
