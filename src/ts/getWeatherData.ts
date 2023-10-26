@@ -13,8 +13,10 @@ import {
   humidityDOM,
   precipitationDOM,
   cloudcoverDOM,
+  inputCityDOM,
 } from "./vars";
 
+import { imperial } from "./settings";
 import { city, country } from "./getCityData";
 
 export async function getWeatherData(url: string): Promise<void> {
@@ -29,9 +31,6 @@ export async function getWeatherData(url: string): Promise<void> {
 
     const data = await req.json();
 
-    //get locale
-    const locale = navigator.language;
-
     // set other variables
     const weatherCode: number = data.current.weathercode;
     const degrees: number = data.current.temperature_2m;
@@ -45,13 +44,12 @@ export async function getWeatherData(url: string): Promise<void> {
     const cloudcover: number = data.current.cloudcover;
     const cloudcoverFormat: string = data.current_units.cloudcover;
 
-    //determine what unit to use based off users locale
-    const imperial: boolean = locale === "en-US";
+    // const imperial: boolean = locale === "en-US";
 
     function updateDOM() {
       cityDOM.textContent = `${city}, ${country}`;
 
-      //convert temperature, wind speed and precipitation if the user is from the us
+      //convert temperature, wind speed and precipitation if user preference is set to fahrenheit
       degreesDOM.textContent = imperial
         ? `${Math.round(convertToFahrenheit(degrees))} °F`
         : `${Math.round(degrees)} ${degreesFormat}`;
@@ -72,6 +70,9 @@ export async function getWeatherData(url: string): Promise<void> {
     }
 
     handleWeatherCode(weatherCode, updateDOM);
+
+    // reset user input
+    inputCityDOM.value = "";
   } catch (err: any) {
     console.error(err);
     throw new Error(`Failed to fetch weather data. (${err.message})`);

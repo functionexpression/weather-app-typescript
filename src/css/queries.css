@@ -1,0 +1,31 @@
+@media (max-width: 1050px) {
+  .settings-container {
+    flex-direction: row;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    font-size: 1.8rem;
+  }
+
+  .icon {
+    width: 60%;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  .icon {
+    width: 100%;
+  }
+}

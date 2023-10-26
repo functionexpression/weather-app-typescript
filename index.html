@@ -6,11 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>weather app</title>
   <link rel="stylesheet" href="src/css/styles.css">
+  <link rel="stylesheet" href="src/css/settings.css">
+  <link rel="stylesheet" href="src/css/queries.css">
+  <link rel="stylesheet" href="src/css/general.css">
+
+
   <script defer src="src/ts/index.ts" type="module"></script>
 </head>
 
 <body>
-
+  <div class="absolute-settings">
+    <div class="settings-container">
+      <ion-icon class="settings-icon" name="settings-outline"> </ion-icon>
+      <div class="settings hidden">
+        <label class="switch toggle-switch">
+          <input type="checkbox" id="toggleUnits">
+          <span class="slider"></span>
+        </label>
+        <span>Use imperial units</span>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
     <h1>Submit a city</h1>
@@ -18,7 +34,7 @@
       <p class="errmsg-text">error</p>
     </div>
     <form class="form">
-      <input type="text" name="city" placeholder="City" class="form-text">
+      <input type="text" name="city" placeholder="City" class="form-text" id="city-input">
       <input type="submit" value="Submit" class="form-btn">
     </form>
   </div>
@@ -31,25 +47,23 @@
     <p class="data" id="weather">Weather</p>
     <div class="grid-data grid-2 data">
       <div class="flex">
-        <img class="icon " src="/wind-beaufort-0.svg" />
-        <p id="wind">wind</p>
+        <img class="icon " src="/wind-beaufort-0.svg" alt="Wind" />
+        <p id="wind">Wind</p>
       </div>
       <div class="flex">
-        <img class="icon" src="/humidity.svg" />
-        <p id="humidity">humidity</p>
+        <img class="icon" src="/humidity.svg" alt="Humidity" />
+        <p id="humidity">Humidity</p>
       </div>
       <div class="flex">
-        <img class="icon" src="/raindrop.svg" />
+        <img class="icon" src="/raindrop.svg" alt="Precipitation" />
         <p id="precipitation">precipitation</p>
       </div>
       <div class="flex">
-        <img class="icon" src="/cloudy.svg" />
+        <img class="icon" src="/cloudy.svg" alt="Cloud Cover" />
         <p id="cloudcover">cloud cover</p>
       </div>
     </div>
-
   </div>
-
 
   <footer>
     <a target="_blank" href="https://bas.dev/work/meteocons">Icons made by bas</a>
