@@ -1,4 +1,5 @@
-import { svg, errMsg, errMsgText } from "./vars";
+import { svg } from "./vars";
+import { displayErrorMessage } from "./utils";
 
 // weather codes can be found at https://open-meteo.com/en/docs
 export function handleWeatherCode(
@@ -97,8 +98,9 @@ export function handleWeatherCode(
       updateFunc();
       break;
     default:
-      console.error("Invalid weather code");
-      errMsg.classList.remove("hidden");
-      errMsgText.textContent = `No weathercode found. Try another city or retry submitting.`;
+      displayErrorMessage(
+        "Invalid weather code.",
+        "No weathercode found. Try another city or retry submitting."
+      );
   }
 }

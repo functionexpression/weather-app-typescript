@@ -1,5 +1,5 @@
-import { errMsg, errMsgText } from "./vars";
 import { getWeatherData } from "./getWeatherData";
+import { displayErrorMessage, hideErrorMessage } from "./utils";
 let lon: string;
 let lat: string;
 let API_URL: string;
@@ -8,7 +8,7 @@ export let country: string;
 
 export async function getCity(e: Event): Promise<void> {
   try {
-    errMsg.classList.add("hidden");
+    hideErrorMessage();
     e.preventDefault();
     const form = document.querySelector(".form") as HTMLFormElement;
     const formData = new FormData(form);
@@ -41,8 +41,9 @@ export async function getCity(e: Event): Promise<void> {
     // get weather data
     getWeatherData(API_URL);
   } catch (err: any) {
-    console.error(err);
-    errMsg.classList.remove("hidden");
-    errMsgText.textContent = `Failed to fetch city data. Retry submitting a city. (${err.message})`;
+    displayErrorMessage(
+      err,
+      "Failed to fetch city data. Retry submitting a city."
+    );
   }
 }

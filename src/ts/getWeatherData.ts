@@ -31,7 +31,6 @@ export async function getWeatherData(url: string): Promise<void> {
 
     const data = await req.json();
 
-    // set other variables
     const weatherCode: number = data.current.weathercode;
     const degrees: number = data.current.temperature_2m;
     const degreesFormat: string = data.current_units.apparent_temperature;
@@ -43,8 +42,6 @@ export async function getWeatherData(url: string): Promise<void> {
     const precipitationFormat: string = data.current_units.precipitation;
     const cloudcover: number = data.current.cloudcover;
     const cloudcoverFormat: string = data.current_units.cloudcover;
-
-    // const imperial: boolean = locale === "en-US";
 
     function updateDOM() {
       cityDOM.textContent = `${city}, ${country}`;
