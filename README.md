@@ -24,7 +24,7 @@ This TypeScript-based weather application provides a user-friendly interface for
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/weather-app-typescript.git
+   git clone https://github.com/functionexpression/weather-app-typescript.git
    ```
 
 2. **Install Dependencies:**
