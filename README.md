@@ -9,7 +9,7 @@ This TypeScript-based weather application provides a user-friendly interface for
 ## Features
 
 - Search for weather information by entering a city name.
-- Conversion to Fahrenheit & MPH when using en-US locale.
+- Optio to change to imperial instead of metric system.
 - Displays weather information including temperature, wind speed, humidity, precipitation, and cloud cover.
 
 ## Technologies Used
