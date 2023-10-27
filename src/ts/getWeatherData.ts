@@ -70,8 +70,10 @@ export async function getWeatherData(url: string): Promise<void> {
 
     // reset user input
     inputCityDOM.value = "";
-  } catch (err: any) {
-    console.error(err);
-    throw new Error(`Failed to fetch weather data. (${err.message})`);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      console.error(err);
+      throw new Error(`Failed to fetch weather data. (${err.message})`);
+    }
   }
 }

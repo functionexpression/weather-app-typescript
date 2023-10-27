@@ -40,10 +40,11 @@ export async function getCity(e: Event): Promise<void> {
 
     // get weather data
     getWeatherData(API_URL);
-  } catch (err: any) {
-    displayErrorMessage(
-      err,
-      "Failed to fetch city data. Retry submitting a city."
-    );
+  } catch (err: unknown) {
+    if (err instanceof Error)
+      displayErrorMessage(
+        err,
+        "Failed to fetch city data. Retry submitting a city."
+      );
   }
 }
