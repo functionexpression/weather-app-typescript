@@ -1,5 +1,5 @@
-import { svg } from "./vars";
-import { displayErrorMessage } from "./utils";
+import { svg } from "../vars";
+import { displayErrorMessage } from "../errorhandling";
 
 // weather codes can be found at https://open-meteo.com/en/docs
 export function handleWeatherCode(

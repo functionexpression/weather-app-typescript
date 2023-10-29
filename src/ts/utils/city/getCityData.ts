@@ -1,5 +1,5 @@
-import { getWeatherData } from "./getWeatherData";
-import { displayErrorMessage, hideErrorMessage } from "./utils";
+import { getWeatherData } from "../weather/getWeatherData";
+import { displayErrorMessage, hideErrorMessage } from "../errorhandling";
 let lon: string;
 let lat: string;
 let API_URL: string;

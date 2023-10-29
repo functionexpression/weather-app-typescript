@@ -3,7 +3,7 @@ import {
   convertToFahrenheit,
   convertToMPH,
   convertMmToInches,
-} from "./metrictoimperial";
+} from "../conversion/metrictoimperial";
 import {
   svg,
   weatherDOM,
@@ -14,10 +14,10 @@ import {
   precipitationDOM,
   cloudcoverDOM,
   inputCityDOM,
-} from "./vars";
+} from "../vars";
 
-import { imperial } from "./settings";
-import { city, country } from "./getCityData";
+import { imperial } from "../settings";
+import { city, country } from "../city/getCityData";
 
 export async function getWeatherData(url: string): Promise<void> {
   try {
